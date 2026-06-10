@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--CorBg);
+  color: #f8fafc;
+  min-height: 100vh;
+  padding: 22px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+:root {
+  --CorCell: #ffffff;
+  --CorIpad: #38bdf8;
+  --CorDesk: #4ade80;
+  --CorBg: #0300a0;
+  --CorCard: rgba(255, 255, 255, 0.08);
+  --borda: rgba(255, 255, 255, 0.18);
+}
+.cabecalho {
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 700px;
+  width: 100%;
+}
+.cabecalho h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+.cabecalho h1 span {
+  color: var(--CorCell);
+  transition: color 0.3s ease;
+}
+.cabecalho p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+.indicador-tela {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 7px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  margin-bottom: 30px;
+  border: 1px solid var(--borda);
+  letter-spacing: 0.3px;
+}
+.badge::after {
+  content: " 💻 Visualização: Celular (< 600px)";
+}
+.container {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.coluna {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.card {
+  background-color: var(--CorCard);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.foto {
+  display: none;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--borda);
+}
+.card-info {
+  text-align: center;
+}
+.card-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.card-info p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+}
+.cargo {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--borda);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+footer {
+  margin-top: auto;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.78rem;
+  padding: 10px 0;
+}
+
+@media (min-width: 600px) {
+  .cabecalho h1 span {
+    color: var(--CorIpad);
+  }
+  .badge::after {
+    content: "💻 Visualização: Tablet (≥ 600px)";
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .foto {
+    display: block;
+    width: 120px;
+    height: 120px;
+  }
+  .foto-trump {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cabecalho h1 {
+    font-size: 2.2rem;
+  }
+  .cabecalho h1 span {
+    color: var(--CorDesk);
+  }
+  .badge::after {
+    content: "🖥️ Visualização: Desktop (≥ 1024px)";
+  }
+  .foto {
+    width: 140px;
+    height: 140px;
+  }
+  .foto-trump {
+    display: block;
+  }
+}
